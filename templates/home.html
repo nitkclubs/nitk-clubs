@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>HOME-nitkclubs</title>
+
+    <link href="../static/home.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div class="topnavbar">
+        <a class="active" href="#home">Home</a>
+        <a href="#clubs">Clubs</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#about"></a>
+        <div class="user">
+            {% if user.is_authenticated %}
+            <i class="fa-solid fa-circle-user" ></i> {{fname}}
+            {% endif %}
+        </div>
+
+        </div>
+    </div>
+    <div id="addmargin"></div>
+    <div id="content">
+        <div id="content-left">
+            <div  class="box">
+                <h2>Available Features</h2>
+                <li>Event Creation</li>
+                <li>Upcoming Events</li>
+                <li>Comments</li>
+            </div>
+
+            <div id="content-right" class="box">
+                <h2>News</h2>
+            </div>
+            <div id="content-right" class="box">
+                <h2>Upcoming Events</h2>
+            </div>
+        </div>
+    
+    </div>
+    <div id="addmargin"></div>
+    <footer class="footer">
+        <div class="teamMembers"> 
+            <ul> <a href="https://github.com/rustammahilane" class="menu">Rustam Mahilane</a> </ul>
+            <ul> <a href="https://github.com/shivam-200014" class="menu">Shivam Yadav</a> </ul>
+            <ul> Shreysnh Singh </ul>
+            <ul> Priyanshu Kumar Chauhan</ul>
+        </div>
+
+    </footer>
+</body>
+</html>

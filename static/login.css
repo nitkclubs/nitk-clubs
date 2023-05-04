@@ -1,0 +1,39 @@
+﻿.body{
+    padding : 10px;
+}
+
+.head{
+    font-family: 'easports15';
+    align-content: center;
+    font-size : 50px;
+    font-weight: 500;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.login_box{
+    float: right;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.box {
+    padding: 2em;
+    margin: 0.65em;
+    background: #ecf2f5;
+    border: 1px solid #bcd;
+    border-radius: 6px;
+    font-family: 'jetbrains mono';
+}
+
+.column{
+    float:left;
+    margin: 2em;  
+    font-size: 24px;
+    font-family: 'jetbrains mono';
+}
+
+
+.login_area{
+    display: grid;
+    width : 100%;
+}
+

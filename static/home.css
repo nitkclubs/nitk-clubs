@@ -1,0 +1,73 @@
+.topnavbar {
+    min-height: 40px!important;
+    padding: 10px 15px!important;
+    background: #222!important;
+    border-bottom: 5px #08c solid!important;
+}
+
+.topnavbar a {
+    float: left;
+    color: #818181;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: lawngreen;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'sans';
+  }
+
+.topnavbar a.active {
+    color: #fff;
+  
+}
+
+#addmargin {
+    margin: 1.5em 0
+}
+
+.user{
+    float: right;
+    padding-top: 10px;
+    color: #818181;
+    font-family: system-ui;
+    font-size: 18px;
+}
+.footer {
+    padding: 2px;
+    background: #222;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.teamMembers {
+    padding: auto;
+    color: #818181;
+    font-weight: 300;
+}
+#foot-navbar {
+    margin: 1.5em 0
+}
+#content {
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0 auto;
+    /* text-align: left; */
+    background-color: white;
+}
+
+
+/* .box {
+    margin-bottom: 1.5em;
+    padding: 1em;
+    background: #ecf2f5;
+    border: 1px solid #bcd;
+    width: 25%;
+} */
+.box {
+    padding: 2em;
+    margin: 0.65em;
+    background: #ecf2f5;
+    border: 1px solid #bcd;
+    border-radius: 6px;
+    font-family: 'jetbrains mono';
+}
