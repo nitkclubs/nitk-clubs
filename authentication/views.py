@@ -20,16 +20,15 @@ def userLogin(request):
         passwd = request.POST['passwd']
 
         user = authenticate(username=username, password= passwd)
-        
+
         if user is not None:
             login(request ,user)
             username = user.username
             return render(request, 'home.html', {'username': username})
-            return redirect('home')
+
         else:
-            messages.error(request, "Bad Credentials!")
-            # return HttpResponse("bad credentials")
-            return redirect('signin')
+            messages.warning(request, "Bad Credentials!")
+
 
     return render(request,'authentication/login.html')
     
@@ -50,7 +49,7 @@ def signup(request):
         # myuser.is_active = False
         myuser.is_active = True
         myuser.save()
-        # messages.success(request, "Your Account has been created succesfully!! Please check your email to confirm your email address in order to activate your account.")
+        messages.success(request, "Your Account has been created succesfully.")
 
         return redirect('signin')    
     return render(request, 'authentication/signup.html')
