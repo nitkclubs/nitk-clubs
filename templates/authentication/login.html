@@ -19,8 +19,20 @@
        
         <div class="login_box">
             <div class="box">
-                <form action="" method="post">
+                <form action="signin" method="post">
                     {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <div id="form_errors">
+                            {% for key, value in form.errors.items %}
+                                <strong>{{ value }}</strong>
+                            {% endfor %}
+                        </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name = "username" placeholder="username" required>
@@ -31,8 +43,8 @@
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary" >Submit</button>
-                    </div>
-                    <a href="signup.html">Create Account</a>
+                    </div> <br>
+                    <a href="{% url 'signup' %}" >Create Account</a>
                 </form>
             </div>
         </div>

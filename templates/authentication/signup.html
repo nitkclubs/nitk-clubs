@@ -25,6 +25,14 @@
             <form action = "/signup/" method="post" class="row g-3" >
                 {% csrf_token %}
                 <div class="col-md-6">
+                    <label for="inputUsername" class="form-label">Create Username </label>
+                    <input type="text" class="form-control" name = 'username' placeholder="abc" aria-label="User name">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Create Password</label>
+                    <input type="password" class="form-control" name = 'passwd' id="inputPassword4">
+                </div>
+                <div class="col-md-6">
                     <label for="inputFname" class="form-label">First Name</label>
                     <input type="text" class="form-control" name = 'fname' placeholder="First name" aria-label="First name">
                 </div>
@@ -40,19 +48,12 @@
                     <label for="inputRollno" class="form-label">Roll no.</label>
                     <input type="number" class="form-control" name = 'rollno' placeholder="123456" id="inputRollno">
                 </div>
-                <div class="col-md-6">
-                    <label for="inputUsername" class="form-label">Create Username </label>
-                    <input type="text" class="form-control" name = 'username' placeholder="abc" aria-label="User name">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Create Password</label>
-                    <input type="password" class="form-control" name = 'passwd' id="inputPassword4">
-                </div>
+
                 <div class="col-12" >
                     <button type="submit" class="btn btn-primary" >Submit</button>
                 </div>
             </form>
-            <br> <a href="login.html">Already have an Account</a>
+            <br> <a href="{% url 'signin' %}">Already have an Account</a>
         </div>
     </div>
     <div class="image_area" >
