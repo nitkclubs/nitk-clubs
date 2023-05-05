@@ -6,12 +6,12 @@ from .models import Club
 # Create your views here.
 def clubView(request):
     if request.method == 'POST':
-
+        clubId = request.POST.get("clubId")
         clubName = request.POST.get("clubName")
         clubHeadRollno = request.POST.get("clubHeadRollno")
         clubDescription = request.POST.get("clubDescription")
 
-        clubdata = Club(clubName = clubName, clubHead = clubHeadRollno, clubDescription = clubDescription)
+        clubdata = Club(clubId, clubName = clubName, clubHead = clubHeadRollno, clubDescription = clubDescription)
         form = clubForm(request.POST)
         if form.is_valid():
             clubdata.save()

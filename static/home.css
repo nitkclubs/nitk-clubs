@@ -22,7 +22,7 @@
 }
 
 #addmargin {
-    margin: 1.5em 0
+    margin: 1em 0;
 }
 
 .user{
@@ -38,6 +38,7 @@
     bottom: 0;
     width: 100%;
     text-align: center;
+    border-top: 5px #08c solid!important;
 }
 .teamMembers {
     padding: auto;
@@ -48,25 +49,28 @@
     margin: 1.5em 0
 }
 #content {
-    padding-left: 2%;
-    padding-right: 2%;
-    margin: 0 auto;
-    /* text-align: left; */
-    background-color: white;
+    display: block;
+    float: left;
+    width: 100%;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-
-/* .box {
-    margin-bottom: 1.5em;
-    padding: 1em;
-    background: #ecf2f5;
-    border: 1px solid #bcd;
+#content-right{
+    /* padding: 50px; */
+    /* margin: 0.25em; */
+    float: right;
     width: 25%;
-} */
+}
+
+#content-left{
+    float: left;
+    width: 75%;
+}
 .box {
-    padding: 2em;
+    padding: 1em;
     margin: 0.65em;
     background: #ecf2f5;
     border: 1px solid #bcd;
-    border-radius: 6px;
+    border-radius: 3px;
 }

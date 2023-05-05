@@ -5,6 +5,9 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 
 # Create your views here.
+def aboutUs(request):
+    return render(request, 'aboutUs.html')
+
 def home(request):
     return render(request, 'home.html')
 
@@ -22,10 +25,10 @@ def userLogin(request):
             login(request ,user)
             username = user.username
             return render(request, 'home.html', {'username': username})
-            # return redirect('home')
+            return redirect('home')
         else:
             messages.error(request, "Bad Credentials!")
-            return HttpResponse("bad credentials")
+            # return HttpResponse("bad credentials")
             return redirect('signin')
 
     return render(request,'authentication/login.html')

@@ -1,21 +1,29 @@
-    {% include "header.html" %}
-    <div id="content">
-        <div id="content-left">
-            <div  class="box">
-                <h2>Available Features</h2>
-                <li>Event Creation</li>
-                <li>Upcoming Events</li>
-                <li>Comments</li>
-            </div>
+{% extends "base.html" %}
 
-            <div id="content-right" class="box">
-                <h2>News</h2>
-            </div>
-            <div id="content-right" class="box">
-                <h2>Upcoming Events</h2>
-            </div>
+{% block content %}
+
+<div id="content">
+    <div id="content-left">
+        <div  class="box">
+            <h2>Available Features</h2>
+            <li>Event Creation</li>
+            <li>Upcoming Events</li>
+            <li>Comments</li>
         </div>
-    
+        <div class="box">
+            hello there how are you <br>
+            you good!
+        </div>
     </div>
+    <div id="content-right">
+        <div  class="box">
+            <h2>Available Features</h2>
+            <li>Event Creation</li>
+            <li>Upcoming Events</li>
+            <li>Comments</li>
+        </div>
+    </div>
+</div>
 
-{% include "footer.html" %}
+
+{% endblock %}
