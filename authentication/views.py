@@ -43,14 +43,18 @@ def signup(request):
         semester = request.POST["semester"]
         dept = request.POST["department"]
 
-        if int(rollno) < 211001 and int(rollno) > 211999:
+        if int(rollno) < 211001 or int(rollno) > 211999:
             messages.warning(request, "invalid Rollno")
             return redirect('signup')
         
-        if int(semester) < 0 and int(semester) > 9:
+        if int(semester) == 0:
             messages.warning(request, "Invalid semester")
             return redirect('signup')
-                
+        
+        if dept == "NULL":
+                messages.error(request,"Select valid Department")
+                return redirect('signup')
+
         myuser = User.objects.create_user(username, email, passwd)
         myuser.first_name = fname
         myuser.last_name = lname
@@ -66,6 +70,7 @@ def signup(request):
             studentData.save()
         else:
             messages.danger(request, "Student model error.")
+
         messages.success(request, "Your Account has been created succesfully.")
 
         return redirect('signin')    
