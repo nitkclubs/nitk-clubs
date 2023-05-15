@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="addmargin"></div>
+<div class="login-area">
+        <div class="box" style="width: 50%; margin: 2% 25%;">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              <strong> {{ message.tags }}!</strong> {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+            
+            <form action="/createEvent/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label form="InputEventName" class="form-label">Event Name</label>
+                    <input type="text" class="form-control" name="eventName" placeholder="" required>
+                </div>
+                 <div class="mb-3">
+                    <label for="InputeventDescription" class="form-label">Description</label>
+                    <textarea class="form-control" name = "eventDescription" placeholder = "" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label form="venue" class="form-label">Event Venue</label>
+                  <input type="text" class="form-control" name = "venue" placeholder="" required>
+                </div>
+                <div class="mb-3">
+                  <label form="datetime" class="form-label">Event Date and Time</label>
+                  <input type="datetime-local" class="form-control" name = "datetime" placeholder="" required>
+                </div>
+                <div class="input-group mb-3">
+                  <label form="eventImage" class="form-label">Event image</label>
+                  <input type="file" class="form-control" id="inputImage" name="eventImg">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                </div>
+
+            </form>
+
+        </div>
+</div>
+
+{% endblock %}

@@ -12,17 +12,20 @@ def clubView(request):
         clubName = request.POST.get("clubName")
         clubHeadUsername = request.POST.get("clubHeadUsername")
         clubDescription = request.POST.get("clubDescription")
-
-        clubdata = Club(clubName = clubName, clubHead = clubHeadUsername, clubDescription = clubDescription)
+        clubImg = request.FILES.get('clubImg')
+        clubdata = Club( clubName = clubName, clubHead = request.user, clubDescription = clubDescription, clubImg = clubImg)
         form = clubForm(request.POST)
-        clubdata.save()
-        if form.is_valid:
-            form.save()
-            return HttpResponse('Your review has been taken')
-  
+
+        if request.user.is_superuser:
+            clubdata.save()
+            messages.success(request,'Your club is successfully created.')
+            return redirect('createClub')
         else:
-            form = clubForm()
-            context = {
-                'form':form,
-            }
+            messages.error(request, 'Only superusers can create a club.')
+            return redirect('createClub')
+
+
     return render(request, 'club/createClub.html')
+
+def createEvent(request):
+    return render(request, 'event.html')

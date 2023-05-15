@@ -3,5 +3,5 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('createClub/', views.clubView, name = 'clubview'),
+    path('createClub/', views.clubView, name = 'createClub'),
 ]

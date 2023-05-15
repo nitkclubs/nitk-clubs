@@ -7,4 +7,5 @@ class Club(models.Model):
     clubName = models.CharField(max_length=30)
     clubDescription = models.TextField(null=True)
     clubHead = models.ForeignKey(User,on_delete=models.CASCADE)
+    clubImg = models.ImageField(null=True)
     

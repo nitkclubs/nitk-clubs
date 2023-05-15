@@ -1,8 +1,9 @@
 .topnavbar {
-    min-height: 40px!important;
+    min-height: 65px!important;
     padding: 10px 15px!important;
     background: #222!important;
     border-bottom: 5px #08c solid!important;
+    /* width: 100%; */
 }
 
 .topnavbar a {
@@ -39,6 +40,7 @@
     width: 100%;
     text-align: center;
     border-top: 5px #08c solid!important;
+    font-family:  sans-serif;
 }
 .teamMembers {
     padding: auto;
@@ -73,4 +75,13 @@
     background: #ecf2f5;
     border: 1px solid #bcd;
     border-radius: 3px;
+}
+
+.card-box{
+    padding: 0.8em;
+    margin: 0.65em;
+    background: #e4dfe9;
+    border: 1px solid #4c2d54;
+    border-radius: 3px;
+    width: fit-content;
 }
