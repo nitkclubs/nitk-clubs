@@ -78,10 +78,17 @@
 }
 
 .card-box{
-    padding: 0.8em;
+    /* padding: 0.2em; */
     margin: 0.65em;
-    background: #e4dfe9;
-    border: 1px solid #4c2d54;
+    border: 3px solid #74bbf1;
     border-radius: 3px;
     width: fit-content;
+}
+.clubcards{
+    /* display: flex; */
+    /* flex-direction: row; */
+    column-count: 3;
+    /* margin: 1em; */
+    /* column-gap: 1em; */
+    /* row-gap: 1em; */
 }

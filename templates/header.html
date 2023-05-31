@@ -40,13 +40,16 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'createEvent' %}">Dashboard</a>
+            <a class="nav-link" href="{% url 'clubDashboard' %}">Dashboard</a>
           </li>
           <li class="nav-item">
             <a  class="nav-link" href= "{% url 'createClub' %}">Club</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
+            <a class="nav-link" href="{% url 'createEvent' %}">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'eventBoard' %}">EventsBoard</a>
           </li>
         </ul>
         <!-- Left links -->
@@ -58,15 +61,25 @@
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 
-        <div class="dropdown">
-          <button class="btn-default dropdown-toggle" data-toggle="dropdown">
-           <img src="../static/image/icons8-test-account-64.png" height="30px">
-          </button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="right : 0; left: auto;">
-            <li role="article"><a role="menuitem" tabindex="-1" href="#"> {{ username }} </a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Menu item 4</a></li>
-          </ul>
+          <div class="dropdown">
+            <button class="btn-default dropdown-toggle" data-toggle="dropdown">
+              <img src="../static/image/icons8-test-account-64.png" height="30px">
+             </button>
+            <!-- <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button> -->
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="menu-item">{{ username }}</a></li>
+              <li>
+                <form id="logoutForm" method="post" action="{% url 'home' %}">
+                  {% csrf_token %}
+                  <!-- <button type="submit">Logout</button> -->
+                  <a class="dropdown-item" role="button" id = 'logoutButton' type = 'submit'>Logout</a>
+                </form>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Avatar -->

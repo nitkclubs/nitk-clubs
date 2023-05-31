@@ -1,0 +1,53 @@
+<!-- student_info.html -->
+{% extends "../base.html" %}
+
+<div id="addmargin"></div>
+{% block content %}
+
+<title>Student Information</title>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+</head>
+<body>
+<h1>Student Information</h1>
+{% for clubs in club %}
+  {{ clubs.clubName }} |
+{% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Semester</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for students in student %} 
+    <tr> 
+      <td>{{ students.rollno }}</td>
+      <td>{{ students.studentName }}</td>
+      <td>{{ students.semester }}</td>
+      <td>{{ students.department }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+      
+
+{% endblock %}
+

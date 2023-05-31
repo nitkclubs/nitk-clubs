@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('createEvent/', views.eventView, name = 'createEvent'),
+    path('eventBoard/', views.eventsBoard, name = 'eventBoard'),
 ]
 
 if settings.DEBUG:  

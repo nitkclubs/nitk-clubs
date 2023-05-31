@@ -2,18 +2,17 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import Student
-
+from club.models import Club
 # Create your views here.
 def aboutUs(request):
     return render(request, 'aboutUs.html')
 
 def home(request):
-    return render(request, 'home.html')
-
-def bye(request):
-    return HttpResponse("bye bye")
+    clubs = Club.objects.all()
+    username = request.user.username
+    return render(request, 'home.html', {'club': clubs, 'username' : username})
 
 def userLogin(request):
     if request.method == 'POST':
@@ -24,8 +23,8 @@ def userLogin(request):
 
         if user is not None:
             login(request ,user)
-            username = user.username
-            return render(request, 'home.html', {'username': username})
+
+            return redirect('home')
 
         else:
             messages.warning(request, "Bad Credentials!")
@@ -66,7 +65,7 @@ def signup(request):
 
         if myuser is not None:
             login(request,myuser)
-            studentData = Student.objects.create(username = request.user, rollno = rollno, semester = semester, department = dept)
+            studentData = Student.objects.create(user = request.user, rollno = rollno, semester = semester, department = dept)
             studentData.save()
         else:
             messages.danger(request, "Student model error.")
@@ -75,3 +74,8 @@ def signup(request):
 
         return redirect('signin')    
     return render(request, 'authentication/signup.html')
+
+# @login_required
+def signout(request):
+    logout(request)
+    return render('login.html')

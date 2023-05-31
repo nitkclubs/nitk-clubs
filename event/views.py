@@ -27,3 +27,7 @@ def eventView(request):
             form = eventForm()
     return render(request, 'event/event.html')
             
+
+def eventsBoard(request):
+    events = Event.objects.all()
+    return render(request, 'event/eventBoard.html', {'event' : events})

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from .forms import clubForm
 from .models import Club
+from authentication.models import Student
 
 # Create your views here.
 def clubView(request):
@@ -29,3 +30,9 @@ def clubView(request):
 
 def createEvent(request):
     return render(request, 'event.html')
+
+
+def clubDashboardView(request):
+    students = Student.objects.all()
+    clubs = Club.objects.all()
+    return render(request,'club/clubDashboard.html', {'student': students, 'club': clubs})

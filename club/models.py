@@ -7,5 +7,12 @@ class Club(models.Model):
     clubName = models.CharField(max_length=30)
     clubDescription = models.TextField(null=True)
     clubHead = models.ForeignKey(User,on_delete=models.CASCADE)
-    clubImg = models.ImageField(null=True)
+    clubImg = models.ImageField(upload_to='clubImage/',null=True)
     
+    def __str__(self):
+        return self.clubName
+    
+class Members(models.Model):
+    clubName = models.CharField(max_length=30)
+    clubMember = models.ForeignKey(User,on_delete=models.CASCADE)
+    # designation = models.CharField(max_length=30, null=True)

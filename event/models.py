@@ -7,7 +7,7 @@ class Event(models.Model):
     eventDescription = models.TextField()
     venue = models.CharField(max_length=30)
     datetime = models.DateTimeField()
-    eventImg = models.ImageField(upload_to="image/", default='')
-
+    eventImg = models.ImageField(upload_to="eventImage/", default='')
+    # eventOrganizer = models.
     def __str__(self):
-        return self.eventName
+        return self.name

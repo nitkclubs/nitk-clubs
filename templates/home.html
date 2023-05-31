@@ -5,17 +5,17 @@
 <div id="content">
     <div id="content-left">
         <div  class="box">
-          
+
+          <div class="clubcards" >
                 {% for clubs in club %}
-                <div class="col">
-                <div class="card-box">
-                    <div class="card" style="width: 20rem;">
+                <div class="card-box" >
+                    <div class="card" >
                       {% if clubs.clubImg %}
-                        <img src= "{{ clubs.clubImg.url }}" width="300px" height="100px" class="card-img-top" alt="...">
+                        <img src= "{{ clubs.clubImg.url }}" style="height: 100px; width: 300px;" class="card-img-top" alt="...">
                       {% endif %}
                         <div class="card-body"> 
                           <p style="background-color: rgb(198, 156, 237);"><strong>{{ clubs.clubName }} </strong></p>
-                          <p class="card-text"> {{ clubs.clubDescription }}</p>
+                          <p class="card-text"> {{ clubs.clubDescription|slice:":80" }} ...</p>
                         </div>
                       </div>
                 </div>
@@ -24,18 +24,17 @@
             </div>
         </div>
         <div class="box">
-            hello there how are you <br>
-            you good!
+            Have a nice day. <br>
         </div>
     </div>
     <div id="content-right">
         <div  class="box">
             <h2>Available Features</h2>
             <li>Event Creation</li>
-            <li>Upcoming Events</li>
-            <li>Comments</li>
+            <li>Club Creation</li>
+            <li>User authentication</li>
         </div>
     </div>
 </div> 
-DELETE THIS LINE
+..
 {% endblock %}
